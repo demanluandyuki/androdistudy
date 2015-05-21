@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/graphics_imageView1"
+        android:layout_width="@dimen/graphics_image_width"
+        android:layout_height="@dimen/graphics_image_height"
+        android:contentDescription="@string/hello_world" />
+
+</LinearLayout>
