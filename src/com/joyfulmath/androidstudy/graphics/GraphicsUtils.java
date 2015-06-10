@@ -1,8 +1,10 @@
 package com.joyfulmath.androidstudy.graphics;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.widget.ImageView;
 
 public class GraphicsUtils {
 	
@@ -69,5 +71,10 @@ public class GraphicsUtils {
 	    // Decode bitmap with inSampleSize set
 	    options.inJustDecodeBounds = false;
 	    return BitmapFactory.decodeResource(res, resId, options);
+	}
+	
+	public static void loadBitmapAsync(Context context,int resId, ImageView imageView) {
+	    BitmapWorkerTask task = new BitmapWorkerTask(imageView,context);
+	    task.execute(resId);
 	}
 }
