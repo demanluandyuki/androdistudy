@@ -27,7 +27,9 @@ public class BitmapWorkerTask extends AsyncTask<Integer, Integer, Bitmap> {
     	publishProgress(0);
         data = params[0];
         publishProgress(1);
-        return GraphicsUtils.decodeSampledBitmapFromResource(mContext.getResources(), data, 100, 100);
+        Bitmap mBitmap = GraphicsUtils.decodeSampledBitmapFromResource(mContext.getResources(), data, 100, 100);
+        GraphicsUtils.addBitmapToMemoryCache(String.valueOf(data), mBitmap);
+        return mBitmap;
     }
 
     // Once complete, see if ImageView is still around and set bitmap.

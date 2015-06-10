@@ -4,9 +4,17 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.AndroidRuntimeException;
+import android.util.LruCache;
 import android.widget.ImageView;
 
 public class GraphicsUtils {
+	
+	
+	/*DiskLruCache can be another case to using
+	 * */
+	private static LruCache<String, Bitmap> mMemoryCache = null;
+	
 	
 	 /**
      * Get the bitmap size info
@@ -74,7 +82,59 @@ public class GraphicsUtils {
 	}
 	
 	public static void loadBitmapAsync(Context context,int resId, ImageView imageView) {
-	    BitmapWorkerTask task = new BitmapWorkerTask(imageView,context);
-	    task.execute(resId);
+		final String imageKey = String.valueOf(resId);
+		final Bitmap bitmap = getBitmapFromMemCache(imageKey);
+		if(null!=bitmap)
+		{
+			imageView.setImageBitmap(bitmap);
+		}
+		else
+		{
+		    BitmapWorkerTask task = new BitmapWorkerTask(imageView,context);
+		    task.execute(resId);
+		}
+	}
+	
+	public static void initMemoryCache()
+	{
+	    // Get max available VM memory, exceeding this amount will throw an
+	    // OutOfMemory exception. Stored in kilobytes as LruCache takes an
+	    // int in its constructor.
+	    final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
+
+	    // Use 1/8th of the available memory for this memory cache.
+	    final int cacheSize = maxMemory / 8;
+	    
+	    mMemoryCache = new LruCache<String, Bitmap>(cacheSize){
+
+			@Override
+			protected int sizeOf(String key, Bitmap bitmap) {
+	            // The cache size will be measured in kilobytes rather than
+	            // number of items.
+	            return bitmap.getByteCount() / 1024;
+			}
+	    	
+	    };
+	}
+	
+	public static void addBitmapToMemoryCache(String key, Bitmap bitmap) {
+		if(null == mMemoryCache)
+		{
+			throw new AndroidRuntimeException("mMemoryCache has not been inited");
+		}
+		
+	    if (getBitmapFromMemCache(key) == null) {
+	        mMemoryCache.put(key, bitmap);
+	    }
+	}
+
+	public static Bitmap getBitmapFromMemCache(String key) {
+		
+		if(null == mMemoryCache)
+		{
+			throw new AndroidRuntimeException("mMemoryCache has not been inited");
+		}
+		
+	    return mMemoryCache.get(key);
 	}
 }
