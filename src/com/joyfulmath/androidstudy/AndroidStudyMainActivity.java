@@ -2,6 +2,7 @@ package com.joyfulmath.androidstudy;
 
 import com.joyfulmath.androidstudy.graphics.GraphicsActivity;
 import com.joyfulmath.androidstudy.graphics.GraphicsUtils;
+import com.joyfulmath.androidstudy.opgles.OpenGLES20Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -30,11 +31,16 @@ public class AndroidStudyMainActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		switch(id)
+		{
+		case R.id.action_settings:
 			startActivity(new Intent(this,GraphicsActivity.class));
-			
-			return true;
+			break;
+		case R.id.action_opengl:
+			startActivity(new Intent(this,OpenGLES20Activity.class));
+			break;
 		}
+
 		return super.onOptionsItemSelected(item);
 	}
 }
