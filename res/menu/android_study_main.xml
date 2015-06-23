@@ -12,5 +12,11 @@
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
         android:title="@string/opengl_es_activity"/>
-
+	
+      <item
+        android:id="@+id/action_transition"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/transition_activity"/>
+     
 </menu>

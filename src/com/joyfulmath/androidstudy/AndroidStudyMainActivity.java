@@ -3,6 +3,7 @@ package com.joyfulmath.androidstudy;
 import com.joyfulmath.androidstudy.graphics.GraphicsActivity;
 import com.joyfulmath.androidstudy.graphics.GraphicsUtils;
 import com.joyfulmath.androidstudy.opgles.OpenGLES20Activity;
+import com.joyfulmath.androidstudy.transition.TransitionActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -39,6 +40,9 @@ public class AndroidStudyMainActivity extends Activity {
 		case R.id.action_opengl:
 			startActivity(new Intent(this,OpenGLES20Activity.class));
 			break;
+		case R.id.action_transition:
+			startActivity(new Intent(this,TransitionActivity.class));
+			break;	
 		}
 
 		return super.onOptionsItemSelected(item);
