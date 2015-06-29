@@ -9,13 +9,15 @@
         android:paddingTop="100dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Text Line 3" />
+        android:text="Text Line 3"
+        android:background="#22ff22" />
 
     <TextView
         android:id="@+id/text_view1"
         android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Text Line 4" />
+        android:text="Text Line 4"
+        android:background="#0000ff" />
 
 </RelativeLayout>

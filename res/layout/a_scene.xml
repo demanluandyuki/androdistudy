@@ -9,13 +9,15 @@
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextLine1" />
+        android:text="TextLine1"
+		android:background="#ff0000"/>
 
     <TextView
         android:id="@+id/text_view2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="TextLine2" />
+        android:text="TextLine2"
+        android:background="#00ffff" />
 
 </RelativeLayout>

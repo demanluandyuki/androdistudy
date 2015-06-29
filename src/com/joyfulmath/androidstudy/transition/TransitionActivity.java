@@ -5,6 +5,7 @@ import com.joyfulmath.androidstudy.R;
 import android.app.Activity;
 import android.os.Bundle;
 import android.transition.Scene;
+import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
 import android.view.View;
@@ -19,6 +20,7 @@ public class TransitionActivity extends Activity {
 	private TransitionManager  mTransitionManager;
 	View mTitle = null;
 	int currentId = 1;
+	private Transition mTransition = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,6 +36,9 @@ public class TransitionActivity extends Activity {
 		TransitionInflater inflater = TransitionInflater.from(this);
         mTransitionManager = inflater.inflateTransitionManager(R.transition.transitions_mgr,
                 mSceneRoot);
+        
+        mTransition = new CustomTransition();
+        mTransition.setDuration(300);
         
 		mTitle.setOnClickListener(new OnClickListener() {
 			
@@ -53,10 +58,12 @@ public class TransitionActivity extends Activity {
 		currentId = id;
 		switch (id) {
         case 1:
-            mTransitionManager.transitionTo(mAScene);
+//            mTransitionManager.transitionTo(mAScene);
+        	TransitionManager.go(mAScene, mTransition);
             break;
         case 2:
-            mTransitionManager.transitionTo(mAnotherScene);
+//            mTransitionManager.transitionTo(mAnotherScene);
+            TransitionManager.go(mAnotherScene, mTransition);
             break;
 		}
 	}
