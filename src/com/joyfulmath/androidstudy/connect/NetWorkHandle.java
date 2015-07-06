@@ -15,7 +15,7 @@ public class NetWorkHandle {
 	private static final String TAG = "NetWorkHandle";
 	
 	
-	private class DownloadWebpageTask extends AsyncTask<String, Void, String>{
+	public class DownloadWebpageTask extends AsyncTask<String, Void, String>{
 
 		@Override
 		protected String doInBackground(String... urls) {
