@@ -1,7 +1,7 @@
 package com.joyfulmath.androidstudy;
 
+import com.joyfulmath.androidstudy.connect.NetWorkActivty;
 import com.joyfulmath.androidstudy.graphics.GraphicsActivity;
-import com.joyfulmath.androidstudy.graphics.GraphicsUtils;
 import com.joyfulmath.androidstudy.opgles.OpenGLES20Activity;
 import com.joyfulmath.androidstudy.transition.TransitionActivity;
 
@@ -42,7 +42,10 @@ public class AndroidStudyMainActivity extends Activity {
 			break;
 		case R.id.action_transition:
 			startActivity(new Intent(this,TransitionActivity.class));
-			break;	
+			break;
+		case R.id.action_network:
+			startActivity(new Intent(this,NetWorkActivty.class));
+			break;		
 		}
 
 		return super.onOptionsItemSelected(item);
