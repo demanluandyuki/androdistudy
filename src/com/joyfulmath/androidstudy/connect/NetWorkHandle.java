@@ -56,6 +56,8 @@ public class NetWorkHandle {
 	        conn.setReadTimeout(10000 /* milliseconds */);
 	        conn.setConnectTimeout(15000 /* milliseconds */);
 	        conn.setRequestMethod("GET");
+	        conn.setRequestProperty("Accept-Charset", "utf-8");
+	        conn.setRequestProperty("contentType", "utf-8");
 	        conn.setDoInput(true);
 	        // Starts the query
 	        conn.connect();
@@ -66,6 +68,7 @@ public class NetWorkHandle {
 	        // Convert the InputStream into a string
 //	        String contentAsString = readIt(is, len);
 	        StringBuilder builder  = inputStreamToStringBuilder(is);
+	        conn.disconnect();
 	        return builder.toString();
 	        
 	    // Makes sure that the InputStream is closed after the app is
@@ -101,7 +104,7 @@ public class NetWorkHandle {
 		String s = "";
 		String line = "";
 		// 定义BufferedReader，载入InputStreamReader
-		BufferedReader rd = new BufferedReader(new InputStreamReader(is));
+		BufferedReader rd = new BufferedReader(new InputStreamReader(is,"UTF-8"));
 		// 读取到字符串中
 		while ((line = rd.readLine()) != null) {
 			s += line;

@@ -1,6 +1,7 @@
 package com.joyfulmath.androidstudy.connect;
 
 import com.joyfulmath.androidstudy.R;
+import com.joyfulmath.androidstudy.TraceLog;
 import com.joyfulmath.androidstudy.connect.NetWorkHandle.onDownLoadResult;
 
 import android.app.Activity;
@@ -12,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class NetWorkActivty extends Activity implements onDownLoadResult{
 
@@ -30,6 +30,7 @@ public class NetWorkActivty extends Activity implements onDownLoadResult{
 		mContent = (WebView) findViewById(R.id.content_view);
 		mWebView = (WebView) findViewById(R.id.webview_id);
 		netHandle = new NetWorkHandle();
+		mContent.getSettings().setDefaultTextEncodingName("UTF-8");
 	}
 
 	@Override
@@ -85,8 +86,10 @@ public class NetWorkActivty extends Activity implements onDownLoadResult{
 
 	@Override
 	public void onResult(String result) {
+		TraceLog.d("result length"+result.length());
+		TraceLog.i(result);
 		String mimeType = "text/html";
-		mContent.loadData(result,mimeType,null);
+		mContent.loadData(result, "text/html; charset=UTF-8", null);
 	}
 	
 	
