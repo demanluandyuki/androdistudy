@@ -36,7 +36,8 @@ public class NetWorkActivty extends Activity implements onDownLoadResult{
 	@Override
 	protected void onResume() {
 		super.onResume();
-
+		NetWorkUtils.traceConnectStatus(getApplicationContext());
+		TraceLog.d("isOnline"+NetWorkUtils.isOnline(getApplicationContext()));
 	}
 
 	@Override
