@@ -20,7 +20,7 @@ public class NetWorkActivty extends Activity implements onDownLoadResult{
 	WebView mContent = null;
 	WebView mWebView = null;
 	NetWorkHandle netHandle = null;
-	
+	NetWorkUtils mConnectMgr = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,18 +31,33 @@ public class NetWorkActivty extends Activity implements onDownLoadResult{
 		mWebView = (WebView) findViewById(R.id.webview_id);
 		netHandle = new NetWorkHandle();
 		mContent.getSettings().setDefaultTextEncodingName("UTF-8");
+		mConnectMgr = new NetWorkUtils(getApplicationContext());
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
 		NetWorkUtils.traceConnectStatus(getApplicationContext());
-		TraceLog.d("isOnline"+NetWorkUtils.isOnline(getApplicationContext()));
+		TraceLog.d("isOnline "+NetWorkUtils.isOnline(getApplicationContext()));
 	}
 
 	@Override
 	protected void onPause() {
 		super.onPause();
+	}
+	
+	
+	
+	@Override
+	protected void onStart() {
+		super.onStart();
+		mConnectMgr.registerConnectReceiver();
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		mConnectMgr.unRegisterConnectReceiver();
 	}
 
 	@Override
