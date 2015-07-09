@@ -89,7 +89,7 @@ public class NetWorkActivty extends Activity implements onDownLoadResult{
 	public void onResult(String result) {
 		TraceLog.d("result length"+result.length());
 		TraceLog.i(result);
-		String mimeType = "text/html";
+//		String mimeType = "text/html";
 		mContent.loadData(result, "text/html; charset=UTF-8", null);
 	}
 	

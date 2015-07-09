@@ -11,7 +11,7 @@ import android.opengl.GLSurfaceView;
 public class MyGLRenderer implements GLSurfaceView.Renderer {
 
 	private Triangle mTriangle;
-	private Square mSquare;
+//	private Square mSquare;
 	
     public void onSurfaceCreated(GL10 unused, EGLConfig config) {
         // Set the background frame color
@@ -30,7 +30,7 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
         // initialize a triangle
         mTriangle = new Triangle();
         // initialize a square
-        mSquare = new Square();
+//        mSquare = new Square();
     }
 
     public static int loadShader(int type, String shaderCode){

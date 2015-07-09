@@ -1,7 +1,6 @@
 package com.joyfulmath.androidstudy.graphics;
 
 import java.lang.ref.WeakReference;
-import java.security.PublicKey;
 
 import android.content.Context;
 import android.graphics.Bitmap;

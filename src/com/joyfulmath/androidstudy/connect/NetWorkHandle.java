@@ -48,7 +48,6 @@ public class NetWorkHandle {
 		InputStream is = null;
 	    // Only display the first 500 characters of the retrieved
 	    // web page content.
-	    int len = 500;
 	        
 	    try {
 	        URL url = new URL(myurl);
@@ -98,20 +97,20 @@ public class NetWorkHandle {
 		return total;
 	}
 	
-	// 将InputStream 格式数据流转换为String 类型
-	private String inputStreamToString(InputStream is) throws IOException {
-		// 定义空字符串
-		String s = "";
-		String line = "";
-		// 定义BufferedReader，载入InputStreamReader
-		BufferedReader rd = new BufferedReader(new InputStreamReader(is,"UTF-8"));
-		// 读取到字符串中
-		while ((line = rd.readLine()) != null) {
-			s += line;
-		}
-		// 以字符串方式返回信息
-		return s;
-	}
+//	// 将InputStream 格式数据流转换为String 类型
+//	private String inputStreamToString(InputStream is) throws IOException {
+//		// 定义空字符串
+//		String s = "";
+//		String line = "";
+//		// 定义BufferedReader，载入InputStreamReader
+//		BufferedReader rd = new BufferedReader(new InputStreamReader(is,"UTF-8"));
+//		// 读取到字符串中
+//		while ((line = rd.readLine()) != null) {
+//			s += line;
+//		}
+//		// 以字符串方式返回信息
+//		return s;
+//	}
 	
 	
 	// Reads an InputStream and converts it to a String.

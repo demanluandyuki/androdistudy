@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.transition.Scene;
 import android.transition.Transition;
-import android.transition.TransitionInflater;
+//import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,7 +17,7 @@ public class TransitionActivity extends Activity {
 	Scene mAScene;
 	Scene mAnotherScene;
 	private ViewGroup mSceneRoot;
-	private TransitionManager  mTransitionManager;
+//	private TransitionManager  mTransitionManager;
 	View mTitle = null;
 	int currentId = 1;
 	private Transition mTransition = null;
@@ -33,9 +33,9 @@ public class TransitionActivity extends Activity {
 		mAScene = Scene.getSceneForLayout(mSceneRoot, R.layout.a_scene, this);
 		mAnotherScene =
 		    Scene.getSceneForLayout(mSceneRoot, R.layout.another_scene, this);
-		TransitionInflater inflater = TransitionInflater.from(this);
-        mTransitionManager = inflater.inflateTransitionManager(R.transition.transitions_mgr,
-                mSceneRoot);
+//		TransitionInflater inflater = TransitionInflater.from(this);
+//        mTransitionManager = inflater.inflateTransitionManager(R.transition.transitions_mgr,
+//                mSceneRoot);
         
         mTransition = new CustomTransition();
         mTransition.setDuration(300);
