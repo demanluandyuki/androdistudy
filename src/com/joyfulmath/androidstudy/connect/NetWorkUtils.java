@@ -1,6 +1,8 @@
 package com.joyfulmath.androidstudy.connect;
 
 import java.lang.ref.WeakReference;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.joyfulmath.androidstudy.TraceLog;
 
@@ -56,6 +58,16 @@ public class NetWorkUtils {
 	    return (networkInfo != null && networkInfo.isConnected());
 	}
 	
+	public static String replaceBlank(String str) {
+		String dest = "";
+		if (str != null) {
+			Pattern p = Pattern.compile("\\s*|\t|\r|\n");
+			Matcher m = p.matcher(str);
+			dest = m.replaceAll("");
+		}
+		return dest;
+	}
+	
 	
 	public NetWorkUtils(Context context)
 	{
@@ -87,7 +99,7 @@ public class NetWorkUtils {
 
 	}
 	
-	private void connectChaned()
+	private void connectChanged()
 	{
 		if(mWeakContext.get()!=null)
 		{
@@ -103,7 +115,7 @@ public class NetWorkUtils {
 			String action = intent.getAction();
 			if(action!=null && action.equals(CONNECTIVITY_CHANGE_ACTION))
 			{
-				connectChaned();
+				connectChanged();
 			}
 		}
 		

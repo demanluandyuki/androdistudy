@@ -69,6 +69,10 @@ public class NetWorkActivty extends Activity implements onDownLoadResult{
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuItem connect = menu.add(0, 0, 0, "connect");
 		connect.setIcon(R.drawable.connect_menu);
+		
+		MenuItem xml = menu.add(0, 1, 1, "xml");
+		xml.setIcon(R.drawable.connect_menu);
+				
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -77,6 +81,11 @@ public class NetWorkActivty extends Activity implements onDownLoadResult{
 		if(item.getItemId() == 0)
 		{
 			stratConnect();			
+			return true;
+		}else if(item.getItemId() == 1)
+		{
+			Student  su = XmlParserDemo.parserStudentXml(this, R.xml.student);
+			TraceLog.i(su.toString());
 			return true;
 		}
 		

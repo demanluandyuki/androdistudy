@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DsXml>
+
+    <IsLog>
+true
+    </IsLog>
+
+    <GradeID>
+10001
+    </GradeID>
+
+    <GradeName>
+高一年级
+    </GradeName>
+
+    <ClassID>
+10010
+    </ClassID>
+
+    <ClassName>
+高一(01)班
+    </ClassName>
+
+    <UserID>
+10000
+    </UserID>
+
+    <UserName>
+张三
+    </UserName>
+
+</DsXml>
