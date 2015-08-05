@@ -8,4 +8,5 @@
 	<string name="opengl_es_activity">OpenGL</string>
 	<string name="transition_activity">Transition</string>
 	<string name="net_work_activity">NetWork</string>
+	<string name="thread_activity">Thread</string>
 </resources>

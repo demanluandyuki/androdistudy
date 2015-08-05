@@ -3,6 +3,7 @@ package com.joyfulmath.androidstudy;
 import com.joyfulmath.androidstudy.connect.NetWorkActivty;
 import com.joyfulmath.androidstudy.graphics.GraphicsActivity;
 import com.joyfulmath.androidstudy.opgles.OpenGLES20Activity;
+import com.joyfulmath.androidstudy.thread.ThreadSampleActivity;
 import com.joyfulmath.androidstudy.transition.TransitionActivity;
 
 import android.app.Activity;
@@ -45,6 +46,9 @@ public class AndroidStudyMainActivity extends Activity {
 			break;
 		case R.id.action_network:
 			startActivity(new Intent(this,NetWorkActivty.class));
+			break;
+		case R.id.action_thread:
+			startActivity(new Intent(this,ThreadSampleActivity.class));
 			break;		
 		}
 

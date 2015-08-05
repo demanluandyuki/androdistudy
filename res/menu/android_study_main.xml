@@ -23,4 +23,9 @@
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
         android:title="@string/net_work_activity"/>
+      <item
+        android:id="@+id/action_thread"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/thread_activity"/>
 </menu>
