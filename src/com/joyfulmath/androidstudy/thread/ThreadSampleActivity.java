@@ -1,6 +1,9 @@
 package com.joyfulmath.androidstudy.thread;
 
+import java.util.Random;
+
 import com.joyfulmath.androidstudy.R;
+import com.joyfulmath.androidstudy.thread.messagemachine.MyMsgMachineSample;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,10 +16,12 @@ public class ThreadSampleActivity extends Activity {
 	
 	private MyLoopThread myThread = null;
 	private MyHandlerThread myHandlerThread = null;
+	MyMsgMachineSample mMsgMachineSample = null;
 	Button btnStart = null;
 	Button btnStart2 = null;
 	Button btnStart3 = null;
 	Button btnStart4 = null;
+	Button btnStart5 = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -71,6 +76,17 @@ public class ThreadSampleActivity extends Activity {
 			}
 		});
 		
+		mMsgMachineSample = new MyMsgMachineSample();
+		mMsgMachineSample.start();
+		
+		btnStart5 = (Button) findViewById(R.id.thread_start_id5);
+		btnStart5.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				mMsgMachineSample.doAction((int)(Math.random()*0x10));
+			}
+		});
 	}
 
 	@Override
@@ -94,6 +110,11 @@ public class ThreadSampleActivity extends Activity {
 		if(myHandlerThread!=null)
 		{
 			myHandlerThread.quit();
+		}
+		
+		if(mMsgMachineSample!=null)
+		{
+			mMsgMachineSample.quit();
 		}
 	}
 	

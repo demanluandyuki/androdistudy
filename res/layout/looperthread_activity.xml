@@ -41,4 +41,13 @@
         android:layout_margin="10dp"
         android:layout_gravity="center_horizontal"
         />
+    <Button
+        android:id="@+id/thread_start_id5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start_msg_machine"
+        android:textSize="14sp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_horizontal"
+        />
 </LinearLayout>

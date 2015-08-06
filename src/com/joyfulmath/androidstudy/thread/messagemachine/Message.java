@@ -4,5 +4,12 @@ package com.joyfulmath.androidstudy.thread.messagemachine;
  * 
  * */
 public class Message {
-
+	public MsgHandler target;
+	public int what;
+	@Override
+	public String toString() {
+		return "message:"+what;
+	}
+	
+	
 }
