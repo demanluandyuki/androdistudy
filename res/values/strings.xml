@@ -9,4 +9,5 @@
 	<string name="transition_activity">Transition</string>
 	<string name="net_work_activity">NetWork</string>
 	<string name="thread_activity">Thread</string>
+	<string name="do_worm">worm</string>
 </resources>

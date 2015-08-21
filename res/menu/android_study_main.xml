@@ -28,4 +28,9 @@
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
         android:title="@string/thread_activity"/>
+      <item
+        android:id="@+id/action_worm"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/do_worm"/>
 </menu>

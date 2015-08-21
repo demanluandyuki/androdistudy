@@ -1,5 +1,6 @@
 package com.joyfulmath.androidstudy;
 
+import com.joyfulmath.androidstudy.bind.worm.WormSample;
 import com.joyfulmath.androidstudy.connect.NetWorkActivty;
 import com.joyfulmath.androidstudy.graphics.GraphicsActivity;
 import com.joyfulmath.androidstudy.opgles.OpenGLES20Activity;
@@ -49,7 +50,11 @@ public class AndroidStudyMainActivity extends Activity {
 			break;
 		case R.id.action_thread:
 			startActivity(new Intent(this,ThreadSampleActivity.class));
-			break;		
+			break;
+		case R.id.action_worm:
+			WormSample sample = new WormSample();
+			sample.doAction();
+			break;
 		}
 
 		return super.onOptionsItemSelected(item);
