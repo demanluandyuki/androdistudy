@@ -38,7 +38,7 @@ public class Worm implements Serializable {
 		result.append("(");
 		for(Data dat:d)
 		{
-			result.append(dat);
+			result.append(dat+" ");
 		}
 		result.append(")");
 		if(next!=null)

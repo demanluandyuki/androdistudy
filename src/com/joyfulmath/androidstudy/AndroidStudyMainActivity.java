@@ -54,6 +54,8 @@ public class AndroidStudyMainActivity extends Activity {
 		case R.id.action_worm:
 			WormSample sample = new WormSample();
 			sample.doAction();
+			sample.doActionP();
+			sample = null;
 			break;
 		}
 
