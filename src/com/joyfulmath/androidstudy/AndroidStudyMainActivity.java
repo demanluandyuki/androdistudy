@@ -4,6 +4,7 @@ import com.joyfulmath.androidstudy.bind.worm.WormSample;
 import com.joyfulmath.androidstudy.connect.NetWorkActivty;
 import com.joyfulmath.androidstudy.graphics.GraphicsActivity;
 import com.joyfulmath.androidstudy.opgles.OpenGLES20Activity;
+import com.joyfulmath.androidstudy.selfviewgrop.CustomViewGroupActivity;
 import com.joyfulmath.androidstudy.thread.ThreadSampleActivity;
 import com.joyfulmath.androidstudy.transition.TransitionActivity;
 
@@ -61,6 +62,9 @@ public class AndroidStudyMainActivity extends Activity {
 			sample.doActionP();
 			sample = null;
 			break;
+		case R.id.action_selfview:
+			startActivity(new Intent(this,CustomViewGroupActivity.class));
+			break;	
 		}
 
 		return super.onOptionsItemSelected(item);

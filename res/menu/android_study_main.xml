@@ -33,4 +33,9 @@
         android:orderInCategory="100"
         android:showAsAction="ifRoom"
         android:title="@string/do_worm"/>
+      <item
+        android:id="@+id/action_selfview"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/do_slefview"/>
 </menu>
