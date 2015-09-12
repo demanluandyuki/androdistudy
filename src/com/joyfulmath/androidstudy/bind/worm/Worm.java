@@ -6,6 +6,10 @@ import java.util.Random;
 import com.joyfulmath.androidstudy.TraceLog;
 
 public class Worm implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7922476832346651738L;
 	static Random rand = new Random(47);
 	Data[] d = {
 			new Data(rand.nextInt(10)),

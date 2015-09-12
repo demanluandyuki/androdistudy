@@ -6,7 +6,6 @@ public class MessageHandlerThread extends Thread {
 	private Object objsync = new Object();
 	
 	private boolean mQuite = false;
-	private Message msg = null;
 	ThreadLocal<MessageQueue> mThreadLocakMsgQueue = new ThreadLocal<MessageQueue>();
 	@Override
 	public void run() {

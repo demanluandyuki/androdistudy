@@ -8,6 +8,8 @@ import com.joyfulmath.androidstudy.thread.ThreadSampleActivity;
 import com.joyfulmath.androidstudy.transition.TransitionActivity;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,6 +21,8 @@ public class AndroidStudyMainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_android_study_main);
+		ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+		TraceLog.i(String.valueOf(am.getMemoryClass()));
 	}
 
 	@Override

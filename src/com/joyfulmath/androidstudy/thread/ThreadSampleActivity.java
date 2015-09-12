@@ -1,6 +1,5 @@
 package com.joyfulmath.androidstudy.thread;
 
-import java.util.Random;
 
 import com.joyfulmath.androidstudy.R;
 import com.joyfulmath.androidstudy.thread.messagemachine.MyMsgMachineSample;

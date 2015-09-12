@@ -8,12 +8,13 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 import android.content.Intent;
+import android.os.Environment;
 
 import com.joyfulmath.androidstudy.TraceLog;
 
 public class WormSample {
 	
-	static final String path = "/mnt/sdcard/worm.out";
+	static final String path = Environment.getExternalStorageDirectory().getPath()+"worm.out";
 	public void doAction()
 	{
 		TraceLog.i();
@@ -28,7 +29,8 @@ public class WormSample {
 			ObjectInputStream in = new ObjectInputStream(new FileInputStream(path));
 			String s = (String) in.readObject();
 			Worm w2 = (Worm) in.readObject();
-			TraceLog.i(s+w);
+			in.close();
+			TraceLog.i(s+w2);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
