@@ -1,4 +1,4 @@
-package com.joyfulmath.androidstudy.selfviewgrop;
+package com.joyfulmath.androidstudy.selfviewgrop.view;
 
 import com.joyfulmath.androidstudy.TraceLog;
 
@@ -65,6 +65,7 @@ public class RegularViewGroup extends ViewGroup {
             cr = cl + cWidth;  
             cb = cHeight + ct;  
             childView.layout(cl, ct, cr, cb);
+            TraceLog.i("cl"+String.valueOf(cl)+"\t ct"+String.valueOf(ct)+"\t cr"+String.valueOf(cr)+"\t cb"+String.valueOf(cb));
 		}
 	}
 
